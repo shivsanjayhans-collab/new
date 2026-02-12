@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Instagram Clone</title>
+  <!-- Swiper.js CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fafafa;
+    }
+    .swiper {
+      width: 100%;
+      height: 100vh;
+    }
+    .swiper-slide {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #000;
+      position: relative;
+    }
+    .swiper-slide img {
+      width: 100%;
+      height: auto;
+      max-height: 80vh;
+      object-fit: cover;
+    }
+    .caption {
+      width: 100%;
+      text-align: center;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      padding: 10px;
+      font-size: 16px;
+      position: absolute;
+      bottom: 0;
+    }
+    audio {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      z-index: 1000;
+    }
+
+    /* Mobile optimization */
+    @media (max-width: 600px) {
+      .caption {
+        font-size: 14px;
+        padding: 8px;
+      }
+      .swiper-slide img {
+        max-height: 70vh;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Swiper Container -->
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="Lady.png" alt="Pic 1">
+        <div class="caption">First photo caption</div>
+      </div>
+      <div class="swiper-slide">
+        <img src="Man.png" alt="Pic 2">
+        <div class="caption">Second photo caption</div>
+      </div>
+      <div class="swiper-slide">
+        <img src="pic3.jpg" alt="Pic 3">
+        <div class="caption">Third photo caption</div>
+      </div>
+      <div class="swiper-slide">
+        <img src="pic4.jpg" alt="Pic 4">
+        <div class="caption">Fourth photo caption</div>
+      </div>
+    </div>
+    <!-- Pagination & Navigation -->
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+
+  <!-- Background Music -->
+  <audio controls autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Swiper.js Script -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
+</body>
+</html>
